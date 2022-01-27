@@ -11,7 +11,9 @@ function Home(props) {
     const fetchImages = () => {
         // get images from Giphy and store the links
         // in the reducer
-
+        dispatch({
+            type: 'FETCH_IMAGES'
+        });
     }
 
     useEffect(() => {
