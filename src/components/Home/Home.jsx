@@ -9,6 +9,8 @@ function Home(props) {
 
     const dispatch = useDispatch();
 
+    const randomImages = useSelector(store => store.randomReducer);
+
     const fetchImages = () => {
         // get images from Giphy and store the links
         // in the reducer
