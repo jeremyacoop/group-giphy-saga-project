@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../Header/Header';
 
 function Home(props) {
 
@@ -25,7 +26,7 @@ function Home(props) {
       <>
         <div>
         <h1>Images</h1>
-
+      <Header />
       
         </div>
       </>
