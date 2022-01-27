@@ -40,19 +40,27 @@ const randomReducer = (state = [], action) => {
     }
 }
 
-const favoriteReducer = (state = [], action) => {
-    console.log(state, action);
-}
+// const favoriteReducer = (state = [], action) => {
+//     console.log(state, action);
+
+// }
+
+
 
 const sagaMiddleware = createSagaMiddleware();
 
 const storeInstance = createStore(
     combineReducers({
         randomReducer,
+        
     }),
     applyMiddleware(sagaMiddleware, logger),
 )
 
 sagaMiddleware.run(watcherSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></ Provider>, document.getElementById('root'));
+ReactDOM.render(
+<Provider store={storeInstance}>
+    <App />
+</ Provider>, 
+document.getElementById('root'));
