@@ -15,7 +15,7 @@ function* watcherSaga() {
 function* fetchImages() {
     console.log('In fetchImages');
     try {
-        let response = yield axios.get('api.giphy.com/v1/gifs/random/');
+        let response = yield axios.get('/random');
         yield put({
             type:   'SET_GALLERY',
             payload:    response.data
