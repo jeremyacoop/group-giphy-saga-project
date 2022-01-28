@@ -5,11 +5,11 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Header/Header';
 
-function Home(props) {
+function Home() {
 
     const dispatch = useDispatch();
 
-    const randomImages = useSelector(store => store.randomReducer);
+    const allImages = useSelector(store => store.imageReducer);
 
     const fetchImages = () => {
         // get images from Giphy and store the links
@@ -29,7 +29,7 @@ function Home(props) {
         <div>
         <h1>Images</h1>
       <Header />
-      
+     {JSON.stringify(allImages)} 
         </div>
       </>
   );

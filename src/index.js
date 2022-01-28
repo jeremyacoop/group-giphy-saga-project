@@ -15,14 +15,14 @@ function* watcherSaga() {
 function* fetchImages() {
     console.log('In fetchImages');
     try {
-        let response = yield axios.get('/random');
+        let response = yield axios.get('/');
         yield put({
             type:   'SET_GALLERY',
             payload:    response.data
         })
     }
     catch (err) {
-        console.error('GET random images failed', err);
+        console.error('GET images failed', err);
         yield put({
             type:   'SET_ERROR',
             payload: 'Image fail!'
@@ -30,11 +30,11 @@ function* fetchImages() {
     }
 }
 
-const randomReducer = (state = [], action) => {
+const imageReducer = (state = [], action) => {
     console.log(state, action);
     switch (action.type) {
         case 'SET_GALLERY':
-            return [state, action.payload];
+            return [...state, action.payload];
         default:
             return state;
     }
@@ -51,7 +51,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const storeInstance = createStore(
     combineReducers({
-        randomReducer,
+        imageReducer,
         
     }),
     applyMiddleware(sagaMiddleware, logger),

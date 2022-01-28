@@ -30,7 +30,7 @@ function FavoritesView() {
         <h1>Images</h1>
       <Header />
         <table>
-            
+           
             </table> 
         </div>
       </>
